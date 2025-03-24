@@ -1,0 +1,60 @@
+{
+  "name": "n8n-nodes-browser-agent",
+  "version": "0.1.0",
+  "description": "n8n node to integrate with Anthropic's computer use for browser automation",
+  "keywords": [
+    "n8n-community-node-package",
+    "browser-automation",
+    "anthropic",
+    "claude",
+    "n8n"
+  ],
+  "license": "MIT",
+  "homepage": "https://www.anthropic.com/",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/n8n-nodes-browser-agent.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/BrowserAgentApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/BrowserAgent/BrowserAgent.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.16.16",
+    "@types/request-promise-native": "~1.0.18",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
+    "eslint": "^8.42.0",
+    "eslint-plugin-n8n-nodes-base": "^1.14.0",
+    "gulp": "^4.0.2",
+    "n8n-core": "^1.0.0",
+    "n8n-workflow": "^1.0.0",
+    "prettier": "^2.8.8",
+    "typescript": "~5.1.3"
+  },
+  "dependencies": {
+    "puppeteer": "^22.5.0"
+  }
+}
