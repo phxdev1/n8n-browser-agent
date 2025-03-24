@@ -184,7 +184,7 @@ export class BrowserAgent implements INodeType {
 
         // Launch browser
         const browser = await puppeteer.launch({
-          headless: headless ? 'new' : false,
+          headless: headless,
           args: ['--no-sandbox', '--disable-setuid-sandbox'],
         });
 
